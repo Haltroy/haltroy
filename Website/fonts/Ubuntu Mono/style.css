@@ -1,0 +1,28 @@
+@font-face {
+   font-family: 'Ubuntu Mono';
+   font-style: normal;
+   font-display: swap;
+   font-weight: 700;
+   src: url('file:///F:/Source/haltroy/Website/fonts/Ubuntu Mono/700.ttf') format('truetype');
+}
+@font-face {
+   font-family: 'Ubuntu Mono';
+   font-style: regular;
+   font-display: swap;
+   font-weight: 400;
+   src: url('file:///F:/Source/haltroy/Website/fonts/Ubuntu Mono/regular.ttf') format('truetype');
+}
+@font-face {
+   font-family: 'Ubuntu Mono';
+   font-style: italic;
+   font-display: swap;
+   font-weight: 400;
+   src: url('file:///F:/Source/haltroy/Website/fonts/Ubuntu Mono/italic.ttf') format('truetype');
+}
+@font-face {
+   font-family: 'Ubuntu Mono';
+   font-style: italic;
+   font-display: swap;
+   font-weight: 700;
+   src: url('file:///F:/Source/haltroy/Website/fonts/Ubuntu Mono/700italic.ttf') format('truetype');
+}
