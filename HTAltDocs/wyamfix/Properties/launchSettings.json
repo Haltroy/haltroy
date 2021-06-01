@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "wyamfix": {
+      "commandName": "Project",
+      "commandLineArgs": "\"F:\\test\" --verbose"
+    }
+  }
+}
