@@ -1,3 +1,4 @@
+## ⚠ In case of website beign down, please check my [Instagram](https://instagram.com/haltroy_). ⚠
 # Hi there, I'm using GitHub 👋
 Welcome to my profile, owned by the most stupid thing ever existed in the history of this universe or might even in the multiverse.
 
