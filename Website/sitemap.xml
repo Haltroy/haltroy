@@ -24,9 +24,6 @@
 		<loc>https://haltroy.com/Yorot.html</loc>
 	</url>
 	<url>
-		<loc>https://haltroy.com/korot2yorot.html</loc>
-	</url>
-	<url>
 		<loc>https://haltroy.com/yorot-d-win.html</loc>
 	</url>
 	<url>
@@ -36,12 +33,24 @@
 		<loc>https://haltroy.com/yorot-d-debian.html</loc>
 	</url>
 	<url>
-		<loc>https://haltroy.com/yorot-d-macos.html</loc>
-	</url>
-	<url>
-		<loc>https://haltroy.com/yorot-d-arch.html</loc>
-	</url>
-	<url>
 		<loc>https://haltroy.com/yorot-d-rpm.html</loc>
+	</url>
+	<url>
+		<loc>https://haltroy.com/backupster-d.html</loc>
+	</url>
+	<url>
+		<loc>https://haltroy.com/backupster-d-win.html</loc>
+	</url>
+	<url>
+		<loc>https://haltroy.com/yorot-d-tar.html</loc>
+	</url>
+	<url>
+		<loc>https://haltroy.com/backupster-d-deb.html</loc>
+	</url>
+	<url>
+		<loc>https://haltroy.com/backupster-d-rpm.html</loc>
+	</url>
+	<url>
+		<loc>https://haltroy.com/backupster-d-tar.html</loc>
 	</url>
 </urlset>
