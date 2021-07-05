@@ -17,39 +17,36 @@ namespace wyamfix
                 Console.WriteLine("WYAMFIX for HTAlt API Docs. ");
                 Console.WriteLine("----------------------------");
                 Console.WriteLine("USAGE: wyamfix [output path]");
-                Console.WriteLine("Example: wyamfix \"F:\\Website\\HTAlt\\output");
+                Console.WriteLine("Example: wyamfix \"C:\\Users\\haltroy\\Desktop\\htalt\\\"");
             }
             else
             {
                 bool verbose = args.Contains("--verbose") || args.Contains("-v");
                 string workingDir = args[0];
-                List<string> ReplaceList = new List<string>();
-                //Read the doc, add all nodes
-                XmlDocument doc = new XmlDocument();
-                doc.LoadXml(Properties.Resources.Files);
-                XmlNode rootnode = doc.FindRoot();
-                for (int i =0; i < rootnode.ChildNodes.Count;i++)
-                {
-                    ReplaceList.Add(rootnode.ChildNodes[i].Attributes["Text"].Value);
-                }
                 // Real work starts now
                 if (Directory.Exists(workingDir))
                 {
                     Stopwatch sw = new Stopwatch();
+                    List<FileDirInfo> list = new List<FileDirInfo>();
+                    RecursiveFileSearch(workingDir, 0, ref list);
                     sw.Start();
-                    var files = Directory.GetFiles(workingDir, "*.html", SearchOption.AllDirectories);
-                    for (int i = 0; i < files.Length;i++)
+                    for (int i = 0; i < list.Count; i++)
                     {
-                        if (verbose) Console.WriteLine("[----------]");
-                        var str = Tools.ReadFile(files[i], System.Text.Encoding.UTF8);
-                        for (int i1 = 0; i1 < ReplaceList.Count; i1++)
+                        var file = list[i];
+                        if (verbose) { Console.WriteLine((file.isDir ? "| " : "-\\ ") + file.FullPath); }
+                        if (!file.isDir && file.FullPath.EndsWith(".html")) 
                         {
-                            if (verbose) Console.WriteLine("| \"" + ReplaceList[i1] + "\" -> \"" + ReplaceList[i1] + ".html\"");
-                            str = str.Replace(ReplaceList[i1], ReplaceList[i1] + ".html");
+                            string text = HTAlt.Tools.ReadFile(file.FullPath, System.Text.Encoding.UTF8);
+                            for (int _i = 0; _i < list.Count; _i++)
+                            {
+                                list[_i].FixPath(file.Depth);
+                                if (verbose && text.Contains(list[_i].Replace + "\"")) { Console.WriteLine("--/ \"" + list[_i].Replace + "\" --> \"" + list[_i].Path + "\""); }
+                                text = text.Replace(list[_i].Replace + "\"", list[_i].Path + "\"");
+                            }
+                            HTAlt.Tools.WriteFile(file.FullPath, text, System.Text.Encoding.UTF8);
                         }
-                        str.WriteToFile(files[i],System.Text.Encoding.UTF8);
-                        if (verbose) Console.WriteLine(">>" + files[i]);
                     }
+
                     sw.Stop();
                     if (verbose) Console.WriteLine("[Done in " + sw.ElapsedMilliseconds + " ms.]");
                 }
@@ -57,6 +54,63 @@ namespace wyamfix
                 {
                     Console.WriteLine("Wyam Output directory doesn't exists. Argument(s): " + string.Join(' ', args));
                 }
+            }
+            static void RecursiveFileSearch(string path, int depth, ref List<FileDirInfo> list , string workDir = "")
+            {
+                var folders = System.IO.Directory.GetDirectories(path, "*", SearchOption.TopDirectoryOnly);
+                for (int i = 0; i < folders.Length; i++)
+                {
+                    var info = new FileDirInfo();
+                    info.FullPath = folders[i];
+                    info.isDir = true;
+                    info.WorkDir = string.IsNullOrWhiteSpace(workDir) ? path : workDir;
+                    info.FixPath();
+                    info.Depth = depth;
+                    list.Add(info);
+                    RecursiveFileSearch(folders[i], depth + 1, ref list, string.IsNullOrWhiteSpace(workDir) ? path : workDir);
+                }
+                var files = System.IO.Directory.GetFiles(path, "*", SearchOption.TopDirectoryOnly);
+                for(int i = 0; i < files.Length; i++)
+                {
+                    var info = new FileDirInfo();
+                    info.FullPath = files[i];
+                    info.isDir = false;
+                    info.WorkDir = string.IsNullOrWhiteSpace(workDir) ? path : workDir;
+                    info.FixPath();
+                    info.Depth = depth;
+                    list.Add(info);
+                }
+            }
+        }
+        public class FileDirInfo
+        {
+            public string FullPath { get; set; } 
+            public string Path { get; set; } 
+            public bool isDir { get; set; }
+            public string WorkDir { get; set; } 
+            public string Replace { get; set; }
+            public int Depth { get; set; }
+            public void FixPath(int depth = 0)
+            {
+                WorkDir = (WorkDir.EndsWith("/") || WorkDir.EndsWith("\\")) ? WorkDir.Substring(0, WorkDir.Length - 1) : WorkDir;
+                Path = FullPath.Replace(WorkDir + "/", "").Replace(WorkDir + "\\", "");
+                Replace = !isDir
+                    ? (System.IO.Path.GetExtension(FullPath).ToLowerEnglish().EndsWith("html") ? ("/" + Path.Substring(0, Path.Length - System.IO.Path.GetExtension(FullPath).Length).Replace("\\", "/")) : ("/" + Path.Replace("\\", "/")))
+                    : "/" + Path.Replace("\\", "/");
+
+                string x = string.Empty;
+                if (depth == 0)
+                {
+                    x = "./";
+                }
+                else if (depth > 0)
+                {
+                    for (int i = 0; i < depth; i++)
+                    {
+                        x += "../";
+                    }
+                }
+                Path = x + Path.Replace("\\", "/") + (!isDir ? (!Path.EndsWith(System.IO.Path.GetExtension(FullPath)) ? System.IO.Path.GetExtension(FullPath) : "") : "/index.html");
             }
         }
     }
