@@ -1,0 +1,62 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <ApplicationIcon>logo.ico</ApplicationIcon>
+    <Version>0.1.7.1</Version>
+    <Authors>Haltroy</Authors>
+    <Description>Standart library for HTAlt packages.</Description>
+    <Copyright>Copyright © Haltroy 2018 - 2021</Copyright>
+    <PackageProjectUrl>https://github.com/Haltroy/HTAlt</PackageProjectUrl>
+    <PackageIcon>logo.png</PackageIcon>
+    <RepositoryUrl>https://github.com/Haltroy/HTAlt</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <PackageLicenseFile>license.txt</PackageLicenseFile>
+    <PackageTags>haltroy HTAlt standart standard string file image checksum verification update htupdate haltroyupdate logger output</PackageTags>
+    <PackageReleaseNotes>Please go to https://github.com/Haltroy/HTAlt/releases to see the changes.</PackageReleaseNotes>
+    <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
+    <SignAssembly>false</SignAssembly>
+    <AssemblyVersion>0.1.7.1</AssemblyVersion>
+    <FileVersion>0.1.7.1</FileVersion>
+    <DebugType>embedded</DebugType>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="license.txt" />
+    <None Remove="logo.ico" />
+    <None Include="license.txt">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
+    <None Include="logo.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="license.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="logo.ico" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="System.Drawing.Common" Version="5.0.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Properties\Resources.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+
+</Project>
