@@ -2,15 +2,16 @@ Title: HTAlt
 Description: Main Menu
 ---
 # HTAlt
-|Standart|WinForms|API|Website|
-|-|-|-|-|
-|[![Nuget](https://img.shields.io/nuget/dt/HTAlt.Standart?label=Nuget&style=for-the-badge)](https://www.nuget.org/packages/HTAlt.Standart)|[![Nuget](https://img.shields.io/nuget/dt/HTAlt.WinForms?label=Nuget&style=for-the-badge)](https://www.nuget.org/packages/HTAlt.WinForms)| [![API](https://img.shields.io/badge/HTAlt-API%20Docs-blue?style=for-the-badge)](http://htalt.haltroy.com) |[![WEB](https://img.shields.io/badge/haltroy-Website-blue?style=for-the-badge)](https://haltroy.com) |
+- [![Nuget](https://img.shields.io/nuget/dt/HTAlt.Standart?label=Standart%20Nuget&style=for-the-badge)](https://www.nuget.org/packages/HTAlt.Standart) [![Nuget](https://img.shields.io/nuget/dt/HTAlt.WinForms?label=WinForms%20Nuget&style=for-the-badge)](https://www.nuget.org/packages/HTAlt.WinForms)
+- [![Wiki](https://img.shields.io/badge/htalt-wiki-blue?style=for-the-badge)](https://haltroy.com/wiki/doku.php?id=htalt) [![API](https://img.shields.io/badge/HTAlt-API%20Docs-blue?style=for-the-badge)](https://haltroy.com/htalt/)
+- [![Website](https://img.shields.io/badge/haltroy-Website-blue?style=for-the-badge)](https://haltroy.com) [![Source](https://img.shields.io/badge/htalt-github-blue?style=for-the-badge)](https://github.com/haltroy/htalt)
 
 A library which is used in [`Haltroy`](http://haltroy.com) apps like [`Yorot`](https://github.com/haltroy/Yorot) and [`Backupster`](https://haltroy.com/Backupster.html).
 
-Latest Stable Version: [`b1.7`](https://github.com/Haltroy/HTAlt/releases/tag/b1.7.0)
+Latest Stable Version: [`b1.7.3`](https://github.com/Haltroy/HTAlt/releases/tag/b1.7.3)
 
 ## Requirements
+
 ### HTAlt.Standart
 HTAlt.Standart only requires .NET Standard 2.0 or newer supported project. HTAlt.Standart can be installed on these frameworks:
  - .NET 5.0 or newer
@@ -28,6 +29,14 @@ HTAlt.WinForms can be installed on Windows Forms projects only. HTAlt.WinForms c
  - .NET 5.0 or newer
  - .NET Framework 4.6.1 or newer
  - .NET Core 3.1 or newer
+ 
+### HTUPDATE Manager
+
+HTU-Man can be installed by package managers or can be used in a folder without installing it.
+
+- .NET Core 3.1 supported machine (see [this document](https://github.com/dotnet/core/blob/main/release-notes/3.1/3.1-supported-os.md))
+  - NOTE: The Official Document for .NET Core 3.1 might not include every operating system (such as Arch Linux), in order to learn if you operating system supports it or not, search on the internet (for example, I learned that Arch Linux supports .NET Core 3.1 by just typing `dotnet arch` into Google.)
+- .NET Core 3.1 or newer installed on machine (required only for framework-dependent packages)
 
 ## Features
  - Tab (Control)
@@ -42,13 +51,32 @@ HTAlt.WinForms can be installed on Windows Forms projects only. HTAlt.WinForms c
  - Math functions (Tools class & code extensions) 
  - Xml Prettifier (Tools class & code extensions)
  - Code Extensions
+ - Package updating with HTUPDATE
+ - Simple URL shortcuts with HTSHortcut
+ - Simple package manager (HTUPDATE Manager)
+ 
+## Usage
+
+### HTAlt Packages
+
+You can install them with NuGet (or `Nuget Package Manager` in Visual Studio) to your project. The commands to install those packages can be found easily on their own NuGet listings.
+
+You can use the packages in their supported projects in both C# and VB.NET by simply adding `using HTAlt;`/`Imports HTAlt` (`C#`/`VB.NET`) on top of the source files (`.cs` for C# projects, `.vb` for VB.NET projects).
+
+To create a `.HTUPDATE` file, you can see examples [`here`](https://github.com/Haltroy/HTAlt/tree/master/HTAlt.Standart/HTUPDATE%20Examples).
+
+To Install or use HTU-Man, you can view [`this documentation`](https://github.com/Haltroy/HTAlt/tree/master/HTUPDATE%20Manager/README.md).
 
  ## Release Branches
 
 | Branch                                                               | .NET Standard | .NET Framework/Core | Status | Release Time |
 |----------------------------------------------------------------------|---------------|---------------------|----------|------------|
 | [`master`](https://github.com/haltroy/htalt)              | Standart 2.0 | Framework 4.6.1 & Core 3.1 | *Development* | (•_•) |
-| [`b1.7.0`](https://github.com/haltroy/htalt/tree/b1.7.0) | Standart 2.0 | Framework 4.6.1 & Core 3.1 | **Latest Release** | 31 May 2021 |
+| [`b1.8` - `Daisy`](https://github.com/haltroy/htalt/tree/b1.8) | .NET Standard 2.0 | .NET Framework 4.6.1 & .NET Core 3.1 | *Development* | 2022 |
+| [`b1.7.3` - `Night Hotfix`](https://github.com/haltroy/htalt/tree/b1.7.3) | .NET Standard 2.0 | .NET Framework 4.6.1 & .NET Core 3.1 | **Latest Release** | 7 October 2021 |
+| [`b1.7.2` - `Night`](https://github.com/haltroy/htalt/tree/b1.7.2) | .NET Standard 2.0 | .NET Framework 4.6.1 & .NET Core 3.1 | Unsupported | 7 October 2021 |
+| [`b1.7.1` - `Coffee II`](https://github.com/haltroy/htalt/tree/b1.7.1) | .NET Standard 2.0 | .NET Framework 4.6.1 & .NET Core 3.1 | Unsupported | 2 September 2021 |
+| [`b1.7.0`](https://github.com/haltroy/htalt/tree/b1.7.0) | Standart 2.0 | Framework 4.6.1 & Core 3.1 | Unsupported | 31 May 2021 |
 | [`b1.6.4`](https://github.com/haltroy/htalt/tree/b1.6.4) | Standart 2.0 | Framework 4.6.1 | Unsupproted | 14 February 2021 |
 | [`b1.6.3`](https://github.com/haltroy/htalt/tree/b1.6.3) | Standart 2.0 | Framework 4.6.1 | Unsupported | 16 December 2020 |
 | [`b1.6.2`](https://github.com/haltroy/htalt/tree/b1.6.2) | Standart 2.0 | Framework 4.6.1 | Unsupported | 22 November 2020 |

@@ -1,2 +1,0 @@
-wyam build
-wyam preview

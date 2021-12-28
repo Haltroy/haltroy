@@ -1,8 +1,0 @@
-{
-  "profiles": {
-    "wyamfix": {
-      "commandName": "Project",
-      "commandLineArgs": "\"C:\\Users\\haltroy\\Desktop\\output\" --verbose"
-    }
-  }
-}
