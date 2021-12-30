@@ -16,7 +16,7 @@ namespace wyamfix
             {
                 Console.WriteLine("WYAMFIX for HTAlt API Docs. ");
                 Console.WriteLine("----------------------------");
-                Console.WriteLine("USAGE: wyamfix [output path]");
+                Console.WriteLine("USAGE: wyamfix [output path] [-v|--verbose]");
                 Console.WriteLine("Example: wyamfix \"C:\\Users\\haltroy\\Desktop\\htalt\\\"");
             }
             else
@@ -40,8 +40,8 @@ namespace wyamfix
                             for (int _i = 0; _i < list.Count; _i++)
                             {
                                 list[_i].FixPath(file.Depth);
-                                if (verbose && text.Contains(list[_i].Replace + "\"")) { Console.WriteLine("--/ \"" + list[_i].Replace + "\" --> \"" + list[_i].Path + "\""); }
-                                text = text.Replace(list[_i].Replace + "\"", list[_i].Path + "\"");
+                                text = text.Replace("href\"" + list[_i].Replace + "\"", "href\"" + list[_i].Path + "\"");
+                                text = text.Replace("src\"" + list[_i].Replace + "\"", "src\"" + list[_i].Path + "\"")
                             }
                             HTAlt.Tools.WriteFile(file.FullPath, text, System.Text.Encoding.UTF8);
                         }
@@ -57,6 +57,16 @@ namespace wyamfix
             }
             static void RecursiveFileSearch(string path, int depth, ref List<FileDirInfo> list , string workDir = "")
             {
+                if(!list.FindAll(it => it.FullPath == (string.IsNullOrWhiteSpace(workDir) ? path : workDir)).Count <= 0) 
+                {
+                    var info = new FileDirInfo();
+                    info.FullPath = string.IsNullOrWhiteSpace(workDir) ? path : workDir;
+                    info.isDir = true;
+                    info.WorkDir = string.IsNullOrWhiteSpace(workDir) ? path : workDir;
+                    info.FixPath();
+                    info.Depth = depth;
+                    list.Add(info);
+                }
                 var folders = System.IO.Directory.GetDirectories(path, "*", SearchOption.TopDirectoryOnly);
                 for (int i = 0; i < folders.Length; i++)
                 {
