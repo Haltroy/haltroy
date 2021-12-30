@@ -10,7 +10,7 @@ Welcome to my profile, owned by the most stupid thing ever existed in the histor
 ---
 
 - 🔭 I’m currently working on:
-  -  [![HTAlt](https://github-readme-stats.vercel.app/api/pin/?username=haltroy&repo=HTAlt&theme=tokyonight)](https://github.com/haltroy/HTAlt)
+  -  [![Foster](https://github-readme-stats.vercel.app/api/pin/?username=haltroy&repo=Foster&theme=tokyonight)](https://github.com/haltroy/Foster)
   -  and
   -  [![Yorot](https://github-readme-stats.vercel.app/api/pin/?username=haltroy&repo=Yorot&theme=tokyonight)](https://github.com/haltroy/Yorot)
 - 📫 Contact: [Instagram](https://instagram.com/haltroy_) | [Twitter](https://twitter.com/haltroy) | [E-Mail](mailto:thehaltroy@gmail.com) | [Website](https://haltroy.com/)
@@ -22,4 +22,4 @@ I host my website's code in [this repository](https://github.com/Haltroy/haltroy
 ## My Favorite Repositories
 | [![HTAlt](https://github-readme-stats.vercel.app/api/pin/?username=haltroy&repo=HTAlt&theme=tokyonight)](https://github.com/haltroy/HTAlt) | [![Yorot](https://github-readme-stats.vercel.app/api/pin/?username=haltroy&repo=Yorot&theme=tokyonight)](https://github.com/haltroy/Yorot) |
 |-|-|
-| [![Archive](https://github-readme-stats.vercel.app/api/pin/?username=haltroy&repo=HTArchives&theme=tokyonight)](https://github.com/haltroy/HTArchives) | [![Backupster](https://github-readme-stats.vercel.app/api/pin/?username=haltroy&repo=Backupster&theme=tokyonight)](https://github.com/haltroy/Backupster) |
+| [![Foster](https://github-readme-stats.vercel.app/api/pin/?username=haltroy&repo=Foster&theme=tokyonight)](https://github.com/haltroy/Foster) | [![Backupster](https://github-readme-stats.vercel.app/api/pin/?username=haltroy&repo=Backupster&theme=tokyonight)](https://github.com/haltroy/Backupster) |
