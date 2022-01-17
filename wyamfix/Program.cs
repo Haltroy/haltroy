@@ -8,9 +8,9 @@ using HTAlt;
 
 namespace wyamfix
 {
-    class Program
+    internal class Program
     {
-        static void Main(string[] args)
+        private static void Main(string[] args)
         {
             if (args.Length <= 0 || string.IsNullOrWhiteSpace(args[0]) || args[0] == "--help" || args[0] == "-h" || args[0] == "?")
             {
@@ -34,14 +34,14 @@ namespace wyamfix
                     {
                         var file = list[i];
                         if (verbose) { Console.WriteLine((file.isDir ? "| " : "-\\ ") + file.FullPath); }
-                        if (!file.isDir && file.FullPath.EndsWith(".html")) 
+                        if (!file.isDir && file.FullPath.EndsWith(".html"))
                         {
                             string text = HTAlt.Tools.ReadFile(file.FullPath, System.Text.Encoding.UTF8);
                             for (int _i = 0; _i < list.Count; _i++)
                             {
                                 list[_i].FixPath(file.Depth);
                                 text = text.Replace("href\"" + list[_i].Replace + "\"", "href\"" + list[_i].Path + "\"");
-                                text = text.Replace("src\"" + list[_i].Replace + "\"", "src\"" + list[_i].Path + "\"")
+                                text = text.Replace("src\"" + list[_i].Replace + "\"", "src\"" + list[_i].Path + "\"");
                             }
                             HTAlt.Tools.WriteFile(file.FullPath, text, System.Text.Encoding.UTF8);
                         }
@@ -55,9 +55,9 @@ namespace wyamfix
                     Console.WriteLine("Wyam Output directory doesn't exists. Argument(s): " + string.Join(' ', args));
                 }
             }
-            static void RecursiveFileSearch(string path, int depth, ref List<FileDirInfo> list , string workDir = "")
+            static void RecursiveFileSearch(string path, int depth, ref List<FileDirInfo> list, string workDir = "")
             {
-                if(!list.FindAll(it => it.FullPath == (string.IsNullOrWhiteSpace(workDir) ? path : workDir)).Count <= 0) 
+                if (list.FindAll(it => it.FullPath == (string.IsNullOrWhiteSpace(workDir) ? path : workDir)).Count > 0)
                 {
                     var info = new FileDirInfo();
                     info.FullPath = string.IsNullOrWhiteSpace(workDir) ? path : workDir;
@@ -80,7 +80,7 @@ namespace wyamfix
                     RecursiveFileSearch(folders[i], depth + 1, ref list, string.IsNullOrWhiteSpace(workDir) ? path : workDir);
                 }
                 var files = System.IO.Directory.GetFiles(path, "*", SearchOption.TopDirectoryOnly);
-                for(int i = 0; i < files.Length; i++)
+                for (int i = 0; i < files.Length; i++)
                 {
                     var info = new FileDirInfo();
                     info.FullPath = files[i];
@@ -92,14 +92,16 @@ namespace wyamfix
                 }
             }
         }
+
         public class FileDirInfo
         {
-            public string FullPath { get; set; } 
-            public string Path { get; set; } 
+            public string FullPath { get; set; }
+            public string Path { get; set; }
             public bool isDir { get; set; }
-            public string WorkDir { get; set; } 
+            public string WorkDir { get; set; }
             public string Replace { get; set; }
             public int Depth { get; set; }
+
             public void FixPath(int depth = 0)
             {
                 WorkDir = (WorkDir.EndsWith("/") || WorkDir.EndsWith("\\")) ? WorkDir.Substring(0, WorkDir.Length - 1) : WorkDir;
