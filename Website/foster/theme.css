@@ -1,10 +1,10 @@
   :root {
     font-size: 16px;
     font-family: 'Ubuntu';
-    --clr-neon: #0080ff;
+    --clr-neon: #fcbd17;
     --clr-bg: #000000;
-    --text-primary: #b6b6b6;
-    --text-secondary: #ececec;
+    --text-primary: #e74025;
+    --text-secondary: #f28d16;
     --bg-primary: #23232e;
     --bg-secondary: #141418;
     --transition-speed: 600ms;
@@ -17,6 +17,11 @@
   code {
     color: var(--text-secondary);
     background-color: var(--bg-secondary);
+    border-radius: 0.5em;
+    border-color: var(--clr-neon);
+    border-style: solid;
+    border-width: 0.15em;
+    font: 'Ubuntu Mono';
   }
   
   body {
@@ -28,12 +33,11 @@
   
   
   .top {
-      background-color: #142850;
-    color: #b6b6b6;
+      background-color: #1B1F3A;
   }
   
   .layer1 {
-    aspect-ratio: 960/300;
+      aspect-ratio: 960/300;
       width: 100%;
       background-repeat: no-repeat;
       background-size: cover;
@@ -41,7 +45,7 @@
   }
   
   .layer2 {
-aspect-ratio: 900/600;
+      aspect-ratio: 900/230;
       width: 100%;
       background-repeat: no-repeat;
       background-size: cover;
@@ -120,7 +124,7 @@ aspect-ratio: 900/600;
     height: 5rem;
     color: var(--text-primary);
     text-decoration: none;
-    filter: grayscale(100%) opacity(0.7);
+    filter: grayscale(100%) opacity(1);
     transition: var(--transition-speed);
   }
   
@@ -142,7 +146,7 @@ aspect-ratio: 900/600;
   }
   
   .fa-secondary {
-    color: #00cacc;
+    color: var(--clr-neon);
   }
   
   .fa-primary,
@@ -207,7 +211,7 @@ aspect-ratio: 900/600;
   .slink {
     font-weight: normal;
     text-decoration: underline;
-    color: #0080ff;
+    color: var(--clr-neon);
   }
   
   .slink:hover {
@@ -243,19 +247,16 @@ aspect-ratio: 900/600;
   }
   
   .dark {
-    --text-primary: #b6b6b6;
-    --text-secondary: #ececec;
-    --bg-primary: #090016;
-    --bg-secondary: #141E61;
+    --bg-primary: #0f0030;
+    --bg-secondary: #1A1A40;
     background-color: var(--bg-primary);
     color: var(--text-primary);
   }
   
   .light {
-    --text-primary: #1f1f1f;
-    --text-secondary: #000000;
-    --bg-primary: #F4F9F9;
-    --bg-secondary: #CCF2F4;
+
+    --bg-primary: #EFFFFD;
+    --bg-secondary: #d4f5f7;
       background-color: var(--bg-primary);
     color: var(--text-primary);
   }
@@ -272,9 +273,6 @@ aspect-ratio: 900/600;
     display: block;
   }
   
-  .solar #solarIcon {
-    display: block;
-  }
   
   *,
   *::before,
