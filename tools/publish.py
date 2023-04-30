@@ -1,13 +1,9 @@
-#Copyright © 2021 - 2022 haltroy
-
-#Use of this source code is governed by a MIT License that can be found in github.com/haltroy/Foster/blob/master/COPYING
-
 import os, sys, subprocess, shutil
 
 def buildrid(rid, output, project, fwork):
     ridDir = os.path.join(output,rid)
     
-    cmd = ['dotnet', 'publish', project ,'--self-contained', '-f', fwork, '-v', 'd', '-r', rid, '-c', 'Release', '-o', ridDir]
+    cmd = ['dotnet', 'publish', project ,'--self-contained', '-f', fwork, '-r', rid, '-c', 'Release', '-p:PublishSingleFile=true', '-o', ridDir]
     try:
         print("")
         print("")
@@ -47,7 +43,7 @@ if __name__ == '__main__':
     rootFolder = ""
     projectName = ""
     publishDir = os.path.join(rootFolder,"publish")
-    framework = "netcoreapp3.1"
+    framework = "net6.0"
     if len(sys.argv) < 2:
         print("Error: Argument 'folder' is missing.")
         sys.exit()

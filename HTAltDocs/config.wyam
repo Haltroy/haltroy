@@ -1,9 +1,0 @@
-#recipe Docs
-
-// Customize your settings and add new ones here
-Settings[Keys.Host] = "haltroy.com/htalt/";
-Settings[DocsKeys.Title] = "HTAlt";
-Settings[DocsKeys.BlogTitle] = "HTAlt";
-Settings[DocsKeys.Logo] = "/assets/img/logo.png";
-
-// Add any pipeline customizations here

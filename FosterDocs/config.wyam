@@ -1,9 +1,0 @@
-#recipe Docs
-
-// Customize your settings and add new ones here
-Settings[Keys.Host] = "haltroy.com/foster/";
-Settings[DocsKeys.Title] = "Foster";
-Settings[DocsKeys.BlogTitle] = "Foster";
-Settings[DocsKeys.Logo] = "/assets/img/logo.png";
-
-// Add any pipeline customizations here

@@ -1,8 +1,0 @@
-# hello plase dont not reles this tex onlin ist imposibel to hav misteri nova dayz
-# becuz of pople liek yu
-# ples keep it bet wen U.S.
-# if yuo post in on lin i wil inst all brian 
-User-agent: *
-Disallow: /cgi-bin
-
-
