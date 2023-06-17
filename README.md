@@ -10,9 +10,7 @@ Welcome to my profile, owned by the most stupid thing ever existed in the histor
 ---
 
 - 🔭 I’m currently working on:
-  -  [![Yorot Avalonia](https://github-readme-stats.vercel.app/api/pin/?username=haltroy&repo=Yorot.Avalonia&theme=tokyonight)](https://github.com/haltroy/Yorot.Avalonia)
-  -  [![Yorot Standart](https://github-readme-stats.vercel.app/api/pin/?username=haltroy&repo=Yorot.Standart&theme=tokyonight)](https://github.com/haltroy/Yorot.Standart)
-  -  [![Yorot Apps](https://github-readme-stats.vercel.app/api/pin/?username=haltroy&repo=YorotApps&theme=tokyonight)](https://github.com/haltroy/YorotApps)
+  -  [![Blueway](https://github-readme-stats.vercel.app/api/pin/?username=haltroy&repo=Blueway&theme=tokyonight)](https://github.com/haltroy/Blueway)
 - 📫 Contact: [Instagram](https://instagram.com/h4ltroy) | [Twitter](https://twitter.com/haltroy) | [E-Mail](mailto:thehaltroy@gmail.com) | [Website](https://haltroy.com/)
 - ⚡ Fun fact: 9+10=21
 
