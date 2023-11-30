@@ -11,6 +11,7 @@ Welcome to my profile, owned by the most stupid thing ever existed in the histor
 - 🔭 I’m currently working on:
   -  [![Blueway](https://github-readme-stats.vercel.app/api/pin/?username=haltroy&repo=Blueway&theme=tokyonight)](https://github.com/haltroy/Blueway)
   -  [![BlueAir](https://github-readme-stats.vercel.app/api/pin/?username=haltroy&repo=BlueAir&theme=tokyonight)](https://github.com/haltroy/BlueAir)
+  -  [![Yorot](https://github-readme-stats.vercel.app/api/pin/?username=haltroy&repo=Yorot.Avalonia&theme=tokyonight)](https://github.com/haltroy/Yorot.Avalonia)
 - 📫 Contact: [Twitter](https://twitter.com/haltroy) | [E-Mail](mailto:thehaltroy@gmail.com) | [Website](https://haltroy.com/)
 - ⚡ Fun fact: 9+10=21
 
