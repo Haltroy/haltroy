@@ -14,9 +14,6 @@ Welcome to my profile, owned by the most stupid thing ever existed in the histor
 - 📫 Contact: [Twitter](https://twitter.com/haltroy) | [E-Mail](mailto:thehaltroy@gmail.com) | [Website](https://haltroy.com/)
 - ⚡ Fun fact: 9+10=21
 
-## Website
-I host my website's code in [this repository](https://github.com/Haltroy/haltroy/tree/main/Website).
-
 ## My Favorite Repositories
 | [![Yorot](https://github-readme-stats.vercel.app/api/pin/?username=haltroy&repo=Yorot.Avalonia&theme=tokyonight)](https://github.com/haltroy/Yorot.Avalonia) | [![Blueway](https://github-readme-stats.vercel.app/api/pin/?username=haltroy&repo=Blueway&theme=tokyonight)](https://github.com/haltroy/Blueway) |
 |-|-|
