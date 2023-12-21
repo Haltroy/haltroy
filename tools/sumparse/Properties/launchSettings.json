@@ -1,8 +1,0 @@
-{
-  "profiles": {
-    "sumparse": {
-      "commandName": "Project",
-      "commandLineArgs": "C:\\Users\\haltroy\\Desktop\\test.txt C:\\Users\\haltroy\\Desktop\\sha1.txt C:\\Users\\haltroy\\Desktop\\sha256.txt C:\\Users\\haltroy\\Desktop\\sha512.txt C:\\Users\\haltroy\\Desktop\\md5.txt"
-    }
-  }
-}

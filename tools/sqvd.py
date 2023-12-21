@@ -17,12 +17,12 @@ if sys.version_info < (3, 5):
     print('Please upgrade your Python version to 3.5 or higher')
     sys.exit()
 
+if(sys.argv[1] == "--help") or (sys.argv[1] == "-h") or (sys.argv[1] == "help") or (sys.argv[1] == "?"):
+    printHelp()
 
 if len(sys.argv) < 2:
     printHelp()
     
-if(sys.argv[1] == "--help") or (sys.argv[1] == "-h") or (sys.argv[1] == "help") or (sys.argv[1] == "?"):
-    printHelp()
     
 else:
     filetypes = ['mp4']
@@ -39,12 +39,23 @@ else:
         for val in types:
             inputFile = os.path.join(dir, val)
             outputFile = os.path.join(output, val)
-            try:
-                cmd = ['ffmpeg', '-i', inputFile, '-c:v', 'libx264', '-pix_fmt', 'yuv420p' , '-aspect','1:1','-c', 'copy', outputFile]
-                result = subprocess.run(cmd, stdout=subprocess.PIPE, check=True)
-                print(inputfile + " => " + outputFile)
-            except:
-                print("Error at file " + val + ".")
-                pass
+            tempdir = os.path.join(output, "temp")
+
+            extractImages(inputFile, tempdir)
+            square(tempdir)
+            remakevVideo(tempdir, outputFile)
+
+
 
     print("Done.")
+
+
+def extractImages(inputFile, outfolder):
+    subprocess.call(["ffmpeg", "-i", inputFile, os.path.join(outfolder, "'%04d.png'"))
+
+def square(sqdir):
+    # TODO
+
+def remakevVideo(inputFolder, outfile):
+    # TODO
+
