@@ -1,5 +1,5 @@
-# hi
+# Leave.
 
-Welcome to my profile, owned by the most stupid thing ever existed in the history of this universe or might even in the multiverse.
+I'm not using GitHub anymore, just here because I need to see what's happening in some projects here. I'm more active in [Codeberg](https://codeberg.org/haltroy).
 
-I'm no longer using GitHub (except when I have to). I'm more active in [Codeberg](https://codeberg.org/haltroy).
+DO NOT TAG ME
